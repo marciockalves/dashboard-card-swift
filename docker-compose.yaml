@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: vapor_postgres
+    environment:
+      POSTGRES_DB: vapor_database
+      POSTGRES_USER: vapor_username
+      POSTGRES_PASSWORD: vapor_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
